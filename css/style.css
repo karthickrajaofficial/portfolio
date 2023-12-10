@@ -3,7 +3,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@400;500;600;700&display=swap');
  
 
-:root {
+body.dark  {
     --bg-black-900: #f2f2fc;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #e8dfec;
@@ -11,7 +11,7 @@
     --text-black-700: #504e70;
 }
 
-body.dark
+:root 
 {
     --bg-black-900: #151515;
     --bg-black-100: #222222;
@@ -492,8 +492,8 @@ h3.my-profession {
 }
 
 /* Dark mode styles for Express and Next.js icons */
-body.dark .icon-list a[href*="expressjs.com"] img,
-body.dark .icon-list a[href*="nextjs.org"] img {
+ .icon-list a[href*="expressjs.com"] img,
+ .icon-list a[href*="nextjs.org"] img {
     filter: invert(1); /* Invert colors in dark mode */
 }
 
