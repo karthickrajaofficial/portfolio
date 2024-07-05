@@ -935,9 +935,7 @@ li{
         font-size: 1.2rem;
         display: none; /* Hide <p> tag on mobile */
     }
-    .portfolio-layer a {
-        display: none; /* Hide <a> tag on mobile */
-    }
+    
     .portfolio-layer a i {
         font-size: 1.6rem;
     }
