@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --------------------------------------------typing animations
     var typed = new Typed(".typing", {
-        strings: ["Web Developer", "Web Designer", "Python Developer"],
+        strings: ["Web Developer", "Web Designer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
