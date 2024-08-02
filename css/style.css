@@ -686,6 +686,12 @@ li{
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio .portfolio-item-inner:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio .portfolio-item-inner .portfolio-img img {
@@ -696,14 +702,13 @@ li{
 .portfolio-box {
     position: relative;
     display: flex;
-    /* border-radius: 2rem; */
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .portfolio-box img {
     width: 100%;
-    transition: 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .portfolio-box:hover img {
@@ -725,22 +730,30 @@ li{
     text-align: center;
     padding: 0 4rem;
     opacity: 0;
-    transition: 0.5s ease;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Prevents interaction until visible */
 }
 
 .portfolio-box:hover .portfolio-layer {
     opacity: 1;
+    pointer-events: auto; /* Allows interaction once visible */
 }
 
 .portfolio-layer h4 {
     font-size: 3rem;
     color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .portfolio-layer p {
     font-size: 1.6rem;
     margin: 0.3rem 0 1rem;
     color: #e8dfec;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .portfolio-layer a {
@@ -751,12 +764,26 @@ li{
     height: 5rem;
     background: #fdf9ff;
     border-radius: 50%;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .portfolio-layer a i {
     font-size: 2rem;
     color: #333;
 }
+
+/* Popup Animation */
+.portfolio-box:hover .portfolio-layer h4,
+.portfolio-box:hover .portfolio-layer p,
+.portfolio-box:hover .portfolio-layer a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 
 /* CONTACT */
@@ -850,6 +877,8 @@ li{
     padding: 0 50px;
 }
 
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1199px) {
     .section .container {
@@ -927,13 +956,32 @@ li{
         margin-top: 20px;
     }
 
-    /* Adjust text sizes for portfolio on small screens */
+    /* Ensure gradient and opacity effects are visible on small screens */
+    .portfolio-box {
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease;
+    }
+
+    .portfolio-box img {
+        transition: transform 0.5s ease;
+    }
+
+    .portfolio-box:hover img {
+        transform: scale(1.1);
+    }
+
+    .portfolio-box .portfolio-layer {
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 0, 0, 0.8));
+        transition: opacity 0.5s ease;
+        opacity: 1; /* Ensure the layer is visible on small screens */
+    }
+    
     .portfolio-layer h4 {
         font-size: 2rem;
     }
     .portfolio-layer p {
         font-size: 1.2rem;
-        display: none; /* Hide <p> tag on mobile */
+        display: none; 
     }
     
     .portfolio-layer a i {
